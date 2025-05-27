@@ -1,37 +1,104 @@
-.invisivel{
-    display:none;
-  }
-  .visivel{
-    display:inline;
-  }
-  .inicial {
-    text-align: center;
-    font-size: 100px;
-    background-color: lightgrey;
-    width: 150px;
-    height: 200px;
-    border: 15px solid green;
-    padding: 10px;
-    margin: 20px;
-  }
-  .acertou {
-    text-align: center;
-    color: yellow;
-    background-color: LawnGreen;
-    width: 150px;
-    height: 200px;
-    border: 15px solid yellow;
-    padding: 10px;
-    margin: 20px;
-  }
-  .errou {
-    text-align: center;
-    font-size: 100px;
-    color: white;
-    background-color: red;
-    width: 150px;
-    height: 200px;
-    border: 15px solid black;
-    padding: 10px;
-    margin: 20px;
-  }
+body {
+  background-image: url(https://i.pinimg.com/736x/e7/66/76/e76676339c6544252f2d77c160d7dba9.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+/* Título e parágrafos */
+h1, p {
+  text-shadow: 2px 2px 4px #000;
+  margin: 20px 0;
+}
+
+#resposta {
+  font-size: 20px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Botões */
+#joganovamente, #reiniciar {
+  border-radius: 30px;
+  width: 40%;
+  text-align: center;
+  font-size: 15pt;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ffffffcc;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#joganovamente:hover, #reiniciar:hover {
+  background-color: #ffd166;
+  transform: scale(1.05);
+}
+
+/* Visibilidade */
+.invisivel { 
+  display: none;
+}
+.visivel {
+  display: inline;
+}
+
+/* Cartas padrão */
+.inicial, .acertou, .errou {
+  display: inline-block;
+  text-align: center;
+  font-size: 80px;
+  width: 150px;
+  height: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+/* Cartas estados */
+.inicial {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 5px solid rgb(47, 188, 47);
+  color: #222;
+}
+.inicial:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.acertou {
+  background-color: rgb(255, 188, 63);
+  border: 5px solid rgb(222, 127, 190);
+  color: rgb(236, 217, 74);
+}
+.errou {
+  background-color: rgb(121, 127, 136);
+  border: 5px solid black;
+  color: white;
+}
+
+/* Imagens dentro das cartas */
+.inicial img, .acertou img, .errou img {
+ position: absolute; /* para posicionar dentro da carta */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px; /* se quiser */
+  margin: 0; /* tirar margem */
+}
+
