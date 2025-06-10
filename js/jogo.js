@@ -50,21 +50,21 @@ function atualizaPlacar(acertos, tentativas) {
     " Desempenho: " + Math.round(desempenho) + "%";
 }
 
-//função executada quando o jogador acerta
-function insereSmile(obj) {
-  obj.className = "acertou";
+function insereImagem(obj, classe, src) {
+  obj.className = classe;
   const img = new Image(100);
-  img.src = "https://i.pinimg.com/736x/8c/18/02/8c1802842104e3745e5bda3cb70d6d18.jpg";
+  img.src = src;
   obj.appendChild(img);
 }
 
-//função executada quando o jogador erra
-function insereSmileErrado(obj) {
-  obj.className = "errou";
-  const imgErrou = new Image(100);
-  imgErrou.src = "https://i.pinimg.com/736x/c3/10/a7/c310a7b59c2ad1c127a1467b05bb6afc.jpg";
-  obj.appendChild(imgErrou);
+function insereSmile(obj) {
+  insereImagem(obj, "acertou", "https://i.pinimg.com/736x/8c/18/02/8c1802842104e3745e5bda3cb70d6d18.jpg");
 }
+
+function insereSmileErrado(obj) {
+  insereImagem(obj, "errou", "https://i.pinimg.com/736x/c3/10/a7/c310a7b59c2ad1c127a1467b05bb6afc.jpg");
+}
+
 
 //função que verifica se o jogador acertou
 function verifica(obj) {
